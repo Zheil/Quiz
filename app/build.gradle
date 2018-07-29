@@ -32,24 +32,29 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //CardView
     implementation 'com.android.support:cardview-v7:27.1.1'
+    //Anko
     implementation 'org.jetbrains.anko:anko-appcompat-v7-commons:0.10.5'
-    implementation 'com.daimajia.easing:library:2.0@aar'
+    //Animation
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
+    implementation 'com.daimajia.easing:library:2.0@aar'
+    //Moxy
     implementation 'com.arello-mobile:moxy-app-compat:1.5.5'
     kapt 'com.arello-mobile:moxy-compiler:1.5.5'
-    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
-    implementation 'com.squareup.sqlbrite3:sqlbrite-kotlin:3.2.0'
+    //SQLite helper
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
+    //RxJava
     implementation 'io.reactivex.rxjava2:rxjava:2.1.17'
     implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
-
+    //Progress bar
     implementation 'com.bigkoo:svprogresshud:1.0.6'
-
+    //Dagger2
     implementation 'com.google.dagger:dagger:2.16'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
     kapt 'com.google.dagger:dagger-compiler:2.16'
-
+    // EventBus
     implementation 'org.greenrobot:eventbus:3.1.1'
 
 }
