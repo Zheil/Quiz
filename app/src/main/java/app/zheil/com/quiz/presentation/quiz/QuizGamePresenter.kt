@@ -50,10 +50,13 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
     }
 
     fun nextQuestion() {
-      if(mDataQuestion.isNotFinishQuestion())
+      if (mDataQuestion.isNotFinishQuestion())  {
+          viewState.animateBtnClick()
           viewState.nextQuestion(mDataQuestion.getQuestion(++mDataQuestion.mCurrentIndexQuestion))
-      else
+      } else {
+          viewState.finishAnimation()
           viewState.finishQuiz()
+      }
         setProgress()
    }
 

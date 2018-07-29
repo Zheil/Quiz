@@ -18,7 +18,6 @@ import javax.inject.Inject
 
 
 class QuizGameActivity : BaseQuiz(), QuizGameView {
-
     @InjectPresenter
     lateinit var mPresenter: QuizGamePresenter
 
@@ -65,6 +64,16 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
         btnShowRules.setOnClickListener {
             mRouter.showRulesActivity(this)
         }
+    }
+
+    override fun animateBtnClick() {
+        YoYo.with(Techniques.Swing)
+                .duration(700)
+                .playOn(btnNextQuestion)
+    }
+
+    override fun finishAnimation() {
+
     }
 
     override fun onBackPressed() {
