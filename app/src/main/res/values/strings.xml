@@ -3,14 +3,6 @@
     <string name="back"><![CDATA[<]]></string>
     <string name="rules">\?</string>
     <string name="btn_next_question">Следующий вопрос</string>
-    <string name="app_rules">
-        Главная цель: ответить на все вопросы
-        \nКаждый из игроков отвечает на вопросы по очереди
-        \nЗа отказ отвечать на вопрос следует наказание:
-        \n\tИгроки по очереди загадывают одно желание
-
-
-    </string>
     <string name="ok">OK</string>
     <string name="startGame">Начать!</string>
     <string name="quiz_end">Викторина завершена !</string>
@@ -18,4 +10,10 @@
     <string name="quiz_for_wish">Викторина на желания!</string>
     <string name="welcome_messages">%s из %s</string>
     <string name="quiz_title">Викторина</string>
+    <string name="app_rules">
+        Главная цель: ответить на все вопросы
+        \nКаждый из игроков отвечает на вопросы по очереди
+        \nЗа отказ отвечать на вопрос следует наказание:
+        \n\tИгроки по очереди загадывают одно желание
+    </string>
 </resources>
