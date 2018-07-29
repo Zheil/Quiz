@@ -3,11 +3,15 @@ package app.zheil.com.quiz.presentation.quiz
 import app.zheil.com.quiz.R
 import app.zheil.com.quiz.di.activity.DaggerActivityComponent
 import app.zheil.com.quiz.GlobalRouter
+import app.zheil.com.quiz.events.FinishedQuizEvent
 import kotlinx.android.synthetic.main.activity_main.*
 import app.zheil.com.quiz.presentation.base.baseQuiz.BaseQuiz
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import javax.inject.Inject
@@ -25,6 +29,16 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
 
     override fun onChildCreate() {
         init()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        unregisterEventBus()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        registerEventBus()
     }
 
     private fun init() {
@@ -88,6 +102,12 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
 
     override fun hideWorkPlace() {
         hideViews(workPlace)
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    fun eventFinishedQuiz(event: FinishedQuizEvent) {
+        EventBus.getDefault().removeStickyEvent(event)
+        finish()
     }
 
 }
