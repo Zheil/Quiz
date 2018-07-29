@@ -17,4 +17,5 @@
     <string name="EndQuiz">Завершить</string>
     <string name="quiz_for_wish">Викторина на желания!</string>
     <string name="welcome_messages">%s из %s</string>
+    <string name="quiz_title">Викторина</string>
 </resources>

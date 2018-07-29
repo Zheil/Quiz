@@ -49,7 +49,7 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
     }
 
     private fun initFonts() {
-        setFontViews(tvQuestion, tvProgress, tvTitleVictory)
+        setFontViews(tvQuestion, tvProgress, tvTitleQuiz)
     }
 
     private fun initListeners() {
@@ -89,7 +89,7 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
         tvQuestion.text = question
         YoYo.with(Techniques.StandUp)
                 .duration(700)
-                .playOn(findViewById(R.id.cardView2))
+                .playOn(findViewById(R.id.cardQuestionQuiz))
     }
 
     override fun finishQuiz() {

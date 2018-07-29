@@ -26,14 +26,14 @@
         android:text="1 из 20 вопросов"
         android:textColor="#fff"
         android:textSize="9pt"
-        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintBottom_toTopOf="@+id/cardQuestionQuiz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/cardQuestionQuiz"
         android:background="@drawable/background_card_view"
         android:layout_width="300dp"
         android:layout_height="300dp"
@@ -56,12 +56,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvTitleVictory"
+                android:id="@+id/tvTitleQuiz"
                 android:layout_width="150dp"
                 android:layout_height="25dp"
-                android:background="@drawable/victorina_view"
+                android:background="@drawable/quiz_view"
                 android:gravity="center"
-                android:text="Викторина"
+                android:text="@string/quiz_title"
                 android:textColor="#ffff" />
 
             <TextView
