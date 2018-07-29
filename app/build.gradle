@@ -36,7 +36,7 @@ dependencies {
     //Animation
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
     implementation 'com.daimajia.easing:library:2.0@aar'
-    //Moxy
+    //Mvp-Moxy
     implementation 'com.arello-mobile:moxy-app-compat:1.5.5'
     kapt 'com.arello-mobile:moxy-compiler:1.5.5'
     //SQLite helper
@@ -53,5 +53,7 @@ dependencies {
     kapt 'com.google.dagger:dagger-compiler:2.16'
     // EventBus
     implementation 'org.greenrobot:eventbus:3.1.1'
+    //Status bar
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
 
 }

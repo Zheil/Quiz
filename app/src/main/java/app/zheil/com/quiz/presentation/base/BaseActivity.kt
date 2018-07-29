@@ -2,10 +2,12 @@ package app.zheil.com.quiz.presentation.base
 
 import android.graphics.Typeface
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.TextView
 import app.zheil.com.quiz.visible
 import com.arellomobile.mvp.MvpAppCompatActivity
+import com.jaeger.library.StatusBarUtil
 import org.greenrobot.eventbus.EventBus
 
 abstract class BaseActivity: MvpAppCompatActivity() {
@@ -18,6 +20,7 @@ abstract class BaseActivity: MvpAppCompatActivity() {
         setContentView(setLayoutView())
 
         onChildCreate()
+        setTransparentStatusBar()
     }
 
 
@@ -56,5 +59,9 @@ abstract class BaseActivity: MvpAppCompatActivity() {
 
      fun unregisterEventBus() {
         EventBus.getDefault().unregister(this)
+    }
+
+    private fun setTransparentStatusBar() {
+        StatusBarUtil.setTransparent(this)
     }
 }
