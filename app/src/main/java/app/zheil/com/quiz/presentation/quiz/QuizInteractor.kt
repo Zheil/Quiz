@@ -12,7 +12,7 @@ class QuizInteractor(private val mContext: Context) {
         val listQuestions = mutableListOf<String>()
 
         val db = DataBase(mContext).readableDatabase
-        val cur = db.query(Const.Database.TABLE_NAME_QUESTION,null, null, null, null, null, null)
+        val cur = db.query(Const.Database.TABLE_NAME_QUESTION, null, null, null, null, null, null)
         if (cur.moveToFirst()) {
             do {
                 listQuestions.add(cur.getString(cur.getColumnIndex(Const.Database.COLUMN_NAME_QUESTION)))
@@ -21,7 +21,7 @@ class QuizInteractor(private val mContext: Context) {
         cur.close()
 
         try {
-            TimeUnit.SECONDS.sleep(1)
+            TimeUnit.SECONDS.sleep(Const.Settings.FORCE_SLEEP_LOADING_DATABASE)
         } catch (e: InterruptedException) {
             e.printStackTrace()
         }

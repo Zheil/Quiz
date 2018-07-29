@@ -1,5 +1,6 @@
 package app.zheil.com.quiz.presentation.quiz
 
+import app.zheil.com.quiz.Const
 import app.zheil.com.quiz.R
 import app.zheil.com.quiz.di.activity.DaggerActivityComponent
 import app.zheil.com.quiz.GlobalRouter
@@ -68,7 +69,7 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
 
     override fun animateBtnClick() {
         YoYo.with(Techniques.Swing)
-                .duration(700)
+                .duration(Const.Animation.DURATION_ANIMATION_OF_BUTTON_NEXT_QUESTION)
                 .playOn(btnNextQuestion)
     }
 
@@ -83,7 +84,7 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
     private fun blockBtn() {
         blockView(btnNextQuestion, "...")
         doAsync {
-            Thread.sleep(1000)
+            Thread.sleep(Const.Settings.BUTTON_NEXT_QUESTION_SLEEP)
             uiThread {
                 unblockView(btnNextQuestion, getString(R.string.btn_next_question))
             }
@@ -97,7 +98,7 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
     override fun nextQuestion(question: String) {
         tvQuestion.text = question
         YoYo.with(Techniques.StandUp)
-                .duration(700)
+                .duration(Const.Animation.DURATION_ANIMATION_OF_CARD_VIEW)
                 .playOn(findViewById(R.id.cardQuestionQuiz))
     }
 
