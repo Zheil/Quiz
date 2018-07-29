@@ -1,5 +1,6 @@
 package app.zheil.com.quiz.presentation.main
 
+import app.zheil.com.quiz.BuildConfig
 import app.zheil.com.quiz.R
 import app.zheil.com.quiz.di.activity.DaggerActivityComponent
 import app.zheil.com.quiz.GlobalRouter
@@ -18,6 +19,11 @@ class MenuActivity: BaseActivity() {
         DaggerActivityComponent.create().inject(this)
         initListeners()
         initTypeFont()
+        initVersion()
+    }
+
+    private fun initVersion() {
+        tvVersion.text = BuildConfig.VERSION_NAME
     }
 
     private fun initListeners() {
@@ -27,6 +33,6 @@ class MenuActivity: BaseActivity() {
     }
 
     private fun initTypeFont() {
-        setFontViews(tvVict)
+        setFontViews(tvInfoQuiz, tvVersion)
     }
 }

@@ -9,7 +9,7 @@
     >
 
     <TextView
-        android:id="@+id/tvVict"
+        android:id="@+id/tvInfoQuiz"
         android:textSize="12pt"
         android:background="#fff"
         android:gravity="center"
@@ -19,7 +19,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Конфликты!"
+        android:text="@string/quiz_for_wish"
         app:layout_constraintBottom_toTopOf="@+id/btnStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
+    <TextView
+        android:id="@+id/tvVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:hint="1.0"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 
