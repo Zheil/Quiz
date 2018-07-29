@@ -29,16 +29,20 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
-                    res -> mDataQuestion.setQuestionArray(res)
+                    resultList -> mDataQuestion.setQuestionArray(resultList)
                     startGame()
-                    viewState.hideLoading()
-                    viewState.visibleWorkPlace()
                 }
     }
 
     private fun startGame() {
+        visibleAndUnlockGame()
         startQuestion()
         setProgress()
+    }
+
+    private fun visibleAndUnlockGame() {
+        viewState.hideLoading()
+        viewState.visibleWorkPlace()
     }
 
     private fun startQuestion() {
