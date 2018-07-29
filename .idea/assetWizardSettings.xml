@@ -49,7 +49,8 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="ff4200" />
+                                                <entry key="color" value="ff7549" />
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -77,13 +78,25 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                      <entry key="text">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="567bff" />
+                                                <entry key="paddingPercent" value="50" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                       <entry key="textAsset">
                                         <value>
                                           <PersistentState>
                                             <option name="values">
                                               <map>
                                                 <entry key="fontFamily" value="Caladea" />
-                                                <entry key="text" value="K" />
+                                                <entry key="text" value="Quiz" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -93,10 +106,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
                                       <entry key="backgroundColor" value="f9ffef" />
                                       <entry key="cropped" value="true" />
-                                      <entry key="iconShape" value="CIRCLE" />
+                                      <entry key="iconShape" value="NONE" />
                                       <entry key="imageAsset" value="D:\if_13_330398.png" />
                                     </map>
                                   </option>

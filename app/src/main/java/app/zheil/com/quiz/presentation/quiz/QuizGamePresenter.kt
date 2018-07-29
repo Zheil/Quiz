@@ -10,14 +10,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-
 @InjectViewState
 class QuizGamePresenter: MvpPresenter<QuizGameView>() {
 
     @Inject
-    lateinit var mData: DataQuestion
-
-    private var mIndexQuestion = 0
+    lateinit var mDataQuestion: DataQuestion
 
     fun initPresenterStart(context: Context) {
         DaggerPresenterComponent.create().inject(this)
@@ -32,7 +29,7 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
-                    res -> mData.setQuestionArray(res)
+                    res -> mDataQuestion.setQuestionArray(res)
                     startGame()
                     viewState.hideLoading()
                     viewState.visibleWorkPlace()
@@ -45,26 +42,25 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
     }
 
     private fun startQuestion() {
-        viewState.nextQuestion(mData.getQuestion(0))
+        viewState.nextQuestion(mDataQuestion.getFirstQuestion())
     }
 
     fun nextQuestion() {
-      if(mData.getMaxIndex() > mIndexQuestion)
-        viewState.nextQuestion(mData.getQuestion(++mIndexQuestion))
+      if(mDataQuestion.isFinishQuestion())
+          viewState.nextQuestion(mDataQuestion.getQuestion(++mDataQuestion.mCurrentIndexQuestion))
       else
           viewState.finishQuiz()
-
         setProgress()
    }
 
     fun prevQuestion() {
-        if(mIndexQuestion-1 >= 0)
-           viewState.nextQuestion(mData.getQuestion(--mIndexQuestion))
+        if(mDataQuestion.isNotEmptyQuestion())
+           viewState.nextQuestion(mDataQuestion.getQuestion(--mDataQuestion.mCurrentIndexQuestion))
 
         setProgress()
     }
 
     private fun setProgress() {
-       viewState.setCurrentNumberQuestion(mIndexQuestion + 1, mData.getMaxIndex() + 1)
+       viewState.setCurrentNumberQuestion(mDataQuestion.mCurrentIndexQuestion + 1, mDataQuestion.getMaxIndex() + 1)
     }
 }
