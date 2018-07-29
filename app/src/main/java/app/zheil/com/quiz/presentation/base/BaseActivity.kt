@@ -2,9 +2,9 @@ package app.zheil.com.quiz.presentation.base
 
 import android.graphics.Typeface
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.TextView
+import app.zheil.com.quiz.Const
 import app.zheil.com.quiz.visible
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.jaeger.library.StatusBarUtil
@@ -30,7 +30,7 @@ abstract class BaseActivity: MvpAppCompatActivity() {
     }
 
     fun setFontViews(vararg view: TextView) {
-        val newTypeface = Typeface.createFromAsset(assets, "fonts/krabuler.ttf")
+        val newTypeface = Typeface.createFromAsset(assets, Const.CURRENT_FONT_TYPEFACE)
         for (i in 0 until view.size)
             view[i].typeface = newTypeface
     }

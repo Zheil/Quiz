@@ -18,5 +18,5 @@ class DataQuestion {
 
     fun isNotEmptyQuestion(): Boolean = mCurrentIndexQuestion - 1 >= 0
 
-    fun isFinishQuestion(): Boolean = getMaxIndex()  > mCurrentIndexQuestion
+    fun isNotFinishQuestion(): Boolean = getMaxIndex()  > mCurrentIndexQuestion
 }

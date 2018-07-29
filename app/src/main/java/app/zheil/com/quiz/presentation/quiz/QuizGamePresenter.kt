@@ -46,7 +46,7 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
     }
 
     fun nextQuestion() {
-      if(mDataQuestion.isFinishQuestion())
+      if(mDataQuestion.isNotFinishQuestion())
           viewState.nextQuestion(mDataQuestion.getQuestion(++mDataQuestion.mCurrentIndexQuestion))
       else
           viewState.finishQuiz()

@@ -76,13 +76,12 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
         doAsync {
             Thread.sleep(1000)
             uiThread {
-                unblockView(btnNextQuestion, "Следующий вопрос")
+                unblockView(btnNextQuestion, getString(R.string.btn_next_question))
             }
         }
     }
 
     override fun setCurrentNumberQuestion(current: Int, maxQuestion: Int) {
-        //tvProgress.text = "$value из $maxQuestion"
         tvProgress.text = String.format(getString(R.string.welcome_messages), current, maxQuestion)
     }
 
