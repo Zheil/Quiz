@@ -1,6 +1,7 @@
 package app.zheil.com.quiz.presentation.quiz
 
 import app.zheil.com.quiz.R
+import app.zheil.com.quiz.di.activity.DaggerActivityComponent
 import app.zheil.com.quiz.presentation.GlobalRouter
 import kotlinx.android.synthetic.main.activity_main.*
 import app.zheil.com.quiz.presentation.base.baseQuiz.BaseQuiz
@@ -10,6 +11,7 @@ import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
+import javax.inject.Inject
 
 
 class QuizGameActivity : BaseQuiz(), QuizGameView {
@@ -17,9 +19,8 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
     @InjectPresenter
     lateinit var mPresenter: QuizGamePresenter
 
-    private val mRouter = GlobalRouter(this)
-
-    private lateinit var mLoadingBar: SVProgressHUD
+    @Inject
+    lateinit var mRouter: GlobalRouter
 
     override fun setLayoutView(): Int = R.layout.activity_main
 
@@ -29,8 +30,8 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
     }
 
     private fun init() {
+        DaggerActivityComponent.create().inject(this)
         mPresenter.initPresenterStart(this)
-        mLoadingBar = SVProgressHUD(this)
         initListeners()
         initFonts()
 
@@ -51,7 +52,7 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
         }
 
         btnShowRules.setOnClickListener {
-            mRouter.showRulesActivity()
+            mRouter.showRulesActivity(this)
         }
 
     }
@@ -84,7 +85,7 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
     }
 
     override fun finishVictorina() {
-        mRouter.showFinishActivity()
+        mRouter.showFinishActivity(this)
     }
 
     override fun visibleWorkPlace() {

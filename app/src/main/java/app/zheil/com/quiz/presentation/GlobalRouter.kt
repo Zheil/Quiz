@@ -7,17 +7,17 @@ import app.zheil.com.quiz.presentation.rules.RulesActivity
 import app.zheil.com.quiz.presentation.quiz.QuizGameActivity
 
 
-class GlobalRouter(private val mContext: Context) {
+class GlobalRouter {
 
-    fun showFinishActivity() {
-       mContext.startActivity(Intent(mContext, FinalQuizActivity::class.java))
+    fun showFinishActivity(context: Context) {
+        context.startActivity(Intent(context, FinalQuizActivity::class.java))
     }
 
-    fun showVictorinaActivity() {
-        mContext.startActivity(Intent(mContext, QuizGameActivity::class.java))
+    fun showVictorinaActivity(context: Context) {
+        context.startActivity(Intent(context, QuizGameActivity::class.java))
     }
 
-    fun showRulesActivity() {
-        mContext.startActivity(Intent(mContext, RulesActivity::class.java))
+    fun showRulesActivity(context: Context) {
+        context.startActivity(Intent(context, RulesActivity::class.java))
     }
 }
