@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GameVictorina</string>
+    <string name="app_name">GameQuiz</string>
     <string name="back"><![CDATA[<]]></string>
     <string name="rules">\?</string>
     <string name="btn_next_question">Следующий вопрос</string>
@@ -7,8 +7,12 @@
         Главная цель: ответить на все вопросы
         \nКаждый из игроков отвечает на вопросы по очереди
         \nЗа отказ отвечать на вопрос следует наказание:
-        \n\t1) Если играют игроки одного пола, то загадуют желание
-        \n\t2) Если играют игроки разных полов, то наказание поцелуй
+        \n\tИгроки по очереди загадывают одно желание
+
 
     </string>
+    <string name="ok">OK</string>
+    <string name="startGame">Начать!</string>
+    <string name="quiz_end">Викторина завершена !</string>
+    <string name="EndQuiz">Завершить</string>
 </resources>

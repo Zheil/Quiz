@@ -1,8 +1,5 @@
 package app.zheil.com.quiz.presentation.finalQuiz
 
-import android.graphics.Typeface
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import app.zheil.com.quiz.R
 import app.zheil.com.quiz.events.FinishedQuizEvent
 import app.zheil.com.quiz.presentation.base.BaseActivity
@@ -18,8 +15,7 @@ class FinalQuizActivity: BaseActivity() {
     }
 
     private fun setFonts() {
-        val typeface = Typeface.createFromAsset(assets, "fonts/krabuler.ttf")
-        tvVictorinaFinish.typeface = typeface
+        setFontViews(tvQuizFinish, btnFinish)
     }
 
     private fun setListeners() {

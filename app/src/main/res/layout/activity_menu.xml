@@ -32,7 +32,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_gradient"
-        android:text="Начать!"
+        android:text="@string/startGame"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
