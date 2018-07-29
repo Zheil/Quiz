@@ -1,9 +1,8 @@
 package app.zheil.com.quiz.presentation.main
 
-
 import app.zheil.com.quiz.R
 import app.zheil.com.quiz.di.activity.DaggerActivityComponent
-import app.zheil.com.quiz.presentation.GlobalRouter
+import app.zheil.com.quiz.GlobalRouter
 import app.zheil.com.quiz.presentation.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 import javax.inject.Inject
@@ -23,12 +22,11 @@ class MenuActivity: BaseActivity() {
 
     private fun initListeners() {
         btnStart.setOnClickListener {
-            mRouter.showVictorinaActivity(this)
+            mRouter.showQuizActivity(this)
         }
     }
 
     private fun initTypeFont() {
         setFontViews(tvVict)
     }
-
 }

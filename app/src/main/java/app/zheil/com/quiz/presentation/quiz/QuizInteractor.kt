@@ -5,7 +5,8 @@ import app.zheil.com.quiz.data.DataBase
 import java.util.concurrent.TimeUnit
 
 
-
+const val TABLE_NAME_QUESTION = "Questions"
+const val COLUMN_NAME_QUESTION = "Question"
 
 class QuizInteractor(val mContext: Context) {
 
@@ -13,10 +14,10 @@ class QuizInteractor(val mContext: Context) {
         val listQuestions = mutableListOf<String>()
 
         val db = DataBase(mContext).readableDatabase
-        val cur = db.query("Questions",null, null, null, null, null, null)
+        val cur = db.query(TABLE_NAME_QUESTION,null, null, null, null, null, null)
         if (cur.moveToFirst()) {
             do {
-                listQuestions.add(cur.getString(cur.getColumnIndex("Question")))
+                listQuestions.add(cur.getString(cur.getColumnIndex(COLUMN_NAME_QUESTION)))
             } while (cur.moveToNext())
         }
         cur.close()

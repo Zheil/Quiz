@@ -1,4 +1,4 @@
-package app.zheil.com.quiz.presentation
+package app.zheil.com.quiz
 
 import android.content.Context
 import android.content.Intent
@@ -13,7 +13,7 @@ class GlobalRouter {
         context.startActivity(Intent(context, FinalQuizActivity::class.java))
     }
 
-    fun showVictorinaActivity(context: Context) {
+    fun showQuizActivity(context: Context) {
         context.startActivity(Intent(context, QuizGameActivity::class.java))
     }
 

@@ -13,11 +13,11 @@ import javax.inject.Inject
 
 @InjectViewState
 class QuizGamePresenter: MvpPresenter<QuizGameView>() {
-    private var mIndexQuestion = 0
 
     @Inject
     lateinit var mData: DataQuestion
 
+    private var mIndexQuestion = 0
 
     fun initPresenterStart(context: Context) {
         DaggerPresenterComponent.create().inject(this)
@@ -37,7 +37,6 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
                     viewState.hideLoading()
                     viewState.visibleWorkPlace()
                 }
-
     }
 
     private fun startGame() {
@@ -53,7 +52,7 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
       if(mData.getMaxIndex() > mIndexQuestion)
         viewState.nextQuestion(mData.getQuestion(++mIndexQuestion))
       else
-          viewState.finishVictorina()
+          viewState.finishQuiz()
 
         setProgress()
    }
@@ -68,5 +67,4 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
     private fun setProgress() {
        viewState.setCurrentNumberQuestion(mIndexQuestion + 1, mData.getMaxIndex() + 1)
     }
-
 }

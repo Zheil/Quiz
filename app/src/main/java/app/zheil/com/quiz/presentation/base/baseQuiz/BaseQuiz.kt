@@ -21,7 +21,6 @@ abstract class BaseQuiz: BaseActivity(), BaseQuizView {
             view[i].hide()
     }
 
-
     private fun initBasic() {
         mLoadingBar = SVProgressHUD(this)
     }

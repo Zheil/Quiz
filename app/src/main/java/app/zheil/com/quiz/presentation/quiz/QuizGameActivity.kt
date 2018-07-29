@@ -2,11 +2,10 @@ package app.zheil.com.quiz.presentation.quiz
 
 import app.zheil.com.quiz.R
 import app.zheil.com.quiz.di.activity.DaggerActivityComponent
-import app.zheil.com.quiz.presentation.GlobalRouter
+import app.zheil.com.quiz.GlobalRouter
 import kotlinx.android.synthetic.main.activity_main.*
 import app.zheil.com.quiz.presentation.base.baseQuiz.BaseQuiz
 import com.arellomobile.mvp.presenter.InjectPresenter
-import com.bigkoo.svprogresshud.SVProgressHUD
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import org.jetbrains.anko.doAsync
@@ -24,7 +23,6 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
 
     override fun setLayoutView(): Int = R.layout.activity_main
 
-
     override fun onChildCreate() {
         init()
     }
@@ -34,7 +32,6 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
         mPresenter.initPresenterStart(this)
         initListeners()
         initFonts()
-
     }
 
     private fun initFonts() {
@@ -54,14 +51,11 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
         btnShowRules.setOnClickListener {
             mRouter.showRulesActivity(this)
         }
-
     }
-
 
     override fun onBackPressed() {
         mPresenter.prevQuestion()
     }
-
 
     private fun blockBtn() {
         blockView(btnNextQuestion, "...")
@@ -84,7 +78,7 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
                 .playOn(findViewById(R.id.cardView2))
     }
 
-    override fun finishVictorina() {
+    override fun finishQuiz() {
         mRouter.showFinishActivity(this)
     }
 
