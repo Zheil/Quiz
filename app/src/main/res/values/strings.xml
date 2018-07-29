@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">GameVictorina</string>
+    <string name="back"><![CDATA[<]]></string>
+    <string name="rules">\?</string>
+    <string name="btn_next_question">Следующий вопрос</string>
+    <string name="app_rules">
+        Главная цель: ответить на все вопросы
+        \nКаждый из игроков отвечает на вопросы по очереди
+        \nЗа отказ отвечать на вопрос следует наказание:
+        \n\t1) Если играют игроки одного пола, то загадуют желание
+        \n\t2) Если играют игроки разных полов, то наказание поцелуй
+
+    </string>
+</resources>
