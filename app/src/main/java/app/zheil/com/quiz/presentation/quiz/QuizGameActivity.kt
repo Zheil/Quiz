@@ -81,8 +81,9 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
         }
     }
 
-    override fun setCurrentNumberQuestion(value: Int, maxQuestion: Int) {
-        tvProgress.text = "$value из $maxQuestion"
+    override fun setCurrentNumberQuestion(current: Int, maxQuestion: Int) {
+        //tvProgress.text = "$value из $maxQuestion"
+        tvProgress.text = String.format(getString(R.string.welcome_messages), current, maxQuestion)
     }
 
     override fun nextQuestion(question: String) {
