@@ -2,6 +2,7 @@ package app.zheil.com.quiz.presentation.quiz
 
 import android.content.Context
 import app.zheil.com.quiz.Const
+import app.zheil.com.quiz.MemoryApp
 import app.zheil.com.quiz.R
 import app.zheil.com.quiz.data.DataQuestion
 import app.zheil.com.quiz.di.presenter.DaggerPresenterComponent
@@ -57,18 +58,32 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
     fun nextQuestion() {
         blockButtonAfterClick()
       if (mDataQuestion.isNotFinishQuestion())  {
-          viewState.animateBtnClick()
+
+          if (MemoryApp.ANIMATION.ANIMATION_STATUS)
+            viewState.animateBtnClick()
+
           viewState.nextQuestion(mDataQuestion.getQuestion(++mDataQuestion.mCurrentIndexQuestion))
       } else {
-          viewState.finishAnimation()
+
+          if (MemoryApp.ANIMATION.ANIMATION_STATUS)
+            viewState.finishAnimation()
+
           viewState.finishQuiz()
       }
+
+        if (MemoryApp.ANIMATION.ANIMATION_STATUS)
+            viewState.animateCard()
+
         setProgress()
    }
 
     fun prevQuestion() {
-        if(mDataQuestion.isNotEmptyQuestion())
+        if(mDataQuestion.isNotEmptyQuestion()) {
            viewState.nextQuestion(mDataQuestion.getQuestion(--mDataQuestion.mCurrentIndexQuestion))
+
+            if (MemoryApp.ANIMATION.ANIMATION_STATUS)
+              viewState.animateCard()
+        }
 
         setProgress()
     }

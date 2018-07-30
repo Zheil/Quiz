@@ -55,7 +55,7 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
 
     private fun initListeners() {
         btnNextQuestion.setOnClickListener {
-            blockBtn()
+            //blockBtn()
             mPresenter.nextQuestion()
         }
 
@@ -96,9 +96,6 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
 
     override fun nextQuestion(question: String) {
         tvQuestion.text = question
-        YoYo.with(Techniques.StandUp)
-                .duration(Const.Animation.DURATION_ANIMATION_OF_CARD_VIEW)
-                .playOn(findViewById(R.id.cardQuestionQuiz))
     }
 
     override fun finishQuiz() {
@@ -117,6 +114,12 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
     fun eventFinishedQuiz(event: FinishedQuizEvent) {
         EventBus.getDefault().removeStickyEvent(event)
         finish()
+    }
+
+    override fun animateCard() {
+        YoYo.with(Techniques.StandUp)
+                .duration(Const.Animation.DURATION_ANIMATION_OF_CARD_VIEW)
+                .playOn(findViewById(R.id.cardQuestionQuiz))
     }
 
 }

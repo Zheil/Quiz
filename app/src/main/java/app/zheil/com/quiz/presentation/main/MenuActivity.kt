@@ -1,9 +1,11 @@
 package app.zheil.com.quiz.presentation.main
 
+import android.widget.Toast
 import app.zheil.com.quiz.BuildConfig
 import app.zheil.com.quiz.R
 import app.zheil.com.quiz.di.activity.DaggerActivityComponent
 import app.zheil.com.quiz.GlobalRouter
+import app.zheil.com.quiz.MemoryApp
 import app.zheil.com.quiz.presentation.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 import javax.inject.Inject
@@ -17,9 +19,14 @@ class MenuActivity: BaseActivity() {
 
     override fun onChildCreate() {
         DaggerActivityComponent.create().inject(this)
+        initView()
         initListeners()
         initTypeFont()
         initVersion()
+    }
+
+    private fun initView() {
+        checkAnimationStatus.isChecked = MemoryApp.ANIMATION.ANIMATION_STATUS
     }
 
     private fun initVersion() {
@@ -29,6 +36,10 @@ class MenuActivity: BaseActivity() {
     private fun initListeners() {
         btnStart.setOnClickListener {
             mRouter.showQuizActivity(this)
+        }
+
+        checkAnimationStatus.setOnCheckedChangeListener { buttonView, isChecked ->
+            MemoryApp.ANIMATION.ANIMATION_STATUS = isChecked
         }
     }
 
