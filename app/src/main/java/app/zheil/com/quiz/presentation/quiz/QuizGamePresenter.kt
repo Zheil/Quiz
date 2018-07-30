@@ -1,6 +1,8 @@
 package app.zheil.com.quiz.presentation.quiz
 
 import android.content.Context
+import app.zheil.com.quiz.Const
+import app.zheil.com.quiz.R
 import app.zheil.com.quiz.data.DataQuestion
 import app.zheil.com.quiz.di.presenter.DaggerPresenterComponent
 import com.arellomobile.mvp.InjectViewState
@@ -8,6 +10,9 @@ import com.arellomobile.mvp.MvpPresenter
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 import javax.inject.Inject
 
 @InjectViewState
@@ -50,6 +55,7 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
     }
 
     fun nextQuestion() {
+        blockButtonAfterClick()
       if (mDataQuestion.isNotFinishQuestion())  {
           viewState.animateBtnClick()
           viewState.nextQuestion(mDataQuestion.getQuestion(++mDataQuestion.mCurrentIndexQuestion))
@@ -69,5 +75,16 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
 
     private fun setProgress() {
        viewState.setCurrentNumberQuestion(mDataQuestion.mCurrentIndexQuestion + 1, mDataQuestion.getMaxIndex() + 1)
+    }
+
+    private fun blockButtonAfterClick() {
+        viewState.blockBtn()
+        doAsync {
+            Thread.sleep(Const.Settings.BUTTON_NEXT_QUESTION_SLEEP)
+            uiThread {
+                viewState.unblockBtn()
+            }
+        }
+
     }
 }

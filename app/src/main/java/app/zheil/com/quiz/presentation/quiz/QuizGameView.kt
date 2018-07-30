@@ -12,4 +12,7 @@ interface QuizGameView: BaseQuizView {
     fun hideWorkPlace()
     fun visibleWorkPlace()
     fun finishAnimation()
+
+    fun blockBtn()
+    fun unblockBtn()
 }

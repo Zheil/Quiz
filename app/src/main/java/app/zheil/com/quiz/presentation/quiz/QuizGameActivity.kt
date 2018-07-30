@@ -19,6 +19,7 @@ import javax.inject.Inject
 
 
 class QuizGameActivity : BaseQuiz(), QuizGameView {
+
     @InjectPresenter
     lateinit var mPresenter: QuizGamePresenter
 
@@ -81,14 +82,12 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
         mPresenter.prevQuestion()
     }
 
-    private fun blockBtn() {
+    override fun blockBtn() {
         blockView(btnNextQuestion, "...")
-        doAsync {
-            Thread.sleep(Const.Settings.BUTTON_NEXT_QUESTION_SLEEP)
-            uiThread {
-                unblockView(btnNextQuestion, getString(R.string.btn_next_question))
-            }
-        }
+    }
+
+    override fun unblockBtn() {
+        unblockView(btnNextQuestion, getString(R.string.btn_next_question))
     }
 
     override fun setCurrentNumberQuestion(current: Int, maxQuestion: Int) {
