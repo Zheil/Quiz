@@ -1,6 +1,5 @@
 package app.zheil.com.quiz.presentation.main
 
-import android.widget.Toast
 import app.zheil.com.quiz.BuildConfig
 import app.zheil.com.quiz.R
 import app.zheil.com.quiz.di.activity.DaggerActivityComponent

@@ -3,7 +3,6 @@ package app.zheil.com.quiz.presentation.quiz
 import android.content.Context
 import app.zheil.com.quiz.Const
 import app.zheil.com.quiz.MemoryApp
-import app.zheil.com.quiz.R
 import app.zheil.com.quiz.data.DataQuestion
 import app.zheil.com.quiz.di.presenter.DaggerPresenterComponent
 import com.arellomobile.mvp.InjectViewState
@@ -11,7 +10,6 @@ import com.arellomobile.mvp.MvpPresenter
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import javax.inject.Inject
@@ -59,10 +57,12 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
         blockButtonAfterClick()
       if (mDataQuestion.isNotFinishQuestion())  {
 
-          if (MemoryApp.ANIMATION.ANIMATION_STATUS)
-            viewState.animateBtnClick()
-
+          if (MemoryApp.ANIMATION.ANIMATION_STATUS) {
+              viewState.animateBtnClick()
+              viewState.animateCard()
+          }
           viewState.nextQuestion(mDataQuestion.getQuestion(++mDataQuestion.mCurrentIndexQuestion))
+
       } else {
 
           if (MemoryApp.ANIMATION.ANIMATION_STATUS)
@@ -70,10 +70,6 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
 
           viewState.finishQuiz()
       }
-
-        if (MemoryApp.ANIMATION.ANIMATION_STATUS)
-            viewState.animateCard()
-
         setProgress()
    }
 
