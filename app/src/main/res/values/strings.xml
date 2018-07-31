@@ -17,4 +17,5 @@
         \n\tИгроки по очереди загадывают одно желание
     </string>
     <string name="animation_status">Анимация</string>
+    <string name="about_app">О программе</string>
 </resources>

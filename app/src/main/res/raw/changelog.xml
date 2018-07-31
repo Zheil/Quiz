@@ -1,0 +1,21 @@
+<changelog>
+    <!-- example with filters in rows
+            <info filter="cats">New cats added - this info has filter text 'cats'</info>
+        <info filter="dogs">New dogs added - this info has filter text 'dogs'</info>
+        <new filter="cats">Some cats improvement - this info has filter text 'cats'</new>
+        <new filter="dogs">Some dogs improvement - this info has filter text 'dogs'</new>
+        <bugfix filter="cats">Some cats bugfix - this info has filter text 'cats'</bugfix>
+        <bugfix filter="dogs">Some dogs bugfix - this info has filter text 'dogs'</bugfix>
+
+
+     -->
+    <release versionCode="100" versionName="v1.1" date="2018-07-31">
+        <new filter="info">Добавлена кнопка "закрыть" в викторине</new>
+        <new filter="info">Добавлена пункт "о программе" в в основной экран</new>
+        <new filter="info">Добавлен пункт "анимация" в меню</new>
+        <info filter="info">Обновлены компоненты (Kotlin) программы</info>
+        <info filter="info">Добавлены новые компоненты в приложение</info>
+        <info filter="info">Добавлена анимация в кнопку "следующий вопрос"</info>
+        <bugfix filter="info">Исправлены разные ошибки</bugfix>
+    </release>
+</changelog>
