@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".presentation.quiz.QuizGameActivity" android:theme="@style/NoBar" android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.main.MenuActivity" android:theme="@style/NoBar" android:screenOrientation="portrait" >
+        <activity android:name=".presentation.main.MainActivity" android:theme="@style/NoBar" android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
