@@ -33,4 +33,8 @@ abstract class BaseQuiz: BaseActivity(), BaseQuizView {
         mLoadingBar.show()
     }
 
+    override fun closeActivity() {
+        this.finish()
+    }
+
 }

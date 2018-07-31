@@ -5,4 +5,5 @@ import com.arellomobile.mvp.MvpView
 interface BaseQuizView: MvpView {
     fun hideLoading()
     fun startLoading()
+    fun closeActivity()
 }

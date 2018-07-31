@@ -4,6 +4,7 @@ import app.zheil.com.quiz.Const
 import app.zheil.com.quiz.R
 import app.zheil.com.quiz.di.activity.DaggerActivityComponent
 import app.zheil.com.quiz.GlobalRouter
+import app.zheil.com.quiz.click
 import app.zheil.com.quiz.events.FinishedQuizEvent
 import kotlinx.android.synthetic.main.activity_main.*
 import app.zheil.com.quiz.presentation.base.baseQuiz.BaseQuiz
@@ -54,17 +55,21 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
     }
 
     private fun initListeners() {
-        btnNextQuestion.setOnClickListener {
+        btnNextQuestion.click {
             //blockBtn()
             mPresenter.nextQuestion()
         }
 
-        btnPrevQuestion.setOnClickListener {
+        btnPrevQuestion.click {
             mPresenter.prevQuestion()
         }
 
-        btnShowRules.setOnClickListener {
+        btnShowRules.click {
             mRouter.showRulesActivity(this)
+        }
+
+        btnBack.click {
+            mPresenter.closeCurrentActivity()
         }
     }
 

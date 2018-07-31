@@ -1,10 +1,7 @@
 package app.zheil.com.quiz.presentation.main
 
-import app.zheil.com.quiz.BuildConfig
-import app.zheil.com.quiz.R
+import app.zheil.com.quiz.*
 import app.zheil.com.quiz.di.activity.DaggerActivityComponent
-import app.zheil.com.quiz.GlobalRouter
-import app.zheil.com.quiz.MemoryApp
 import app.zheil.com.quiz.presentation.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 import javax.inject.Inject
@@ -33,7 +30,7 @@ class MenuActivity: BaseActivity() {
     }
 
     private fun initListeners() {
-        btnStart.setOnClickListener {
+        btnStart.click {
             mRouter.showQuizActivity(this)
         }
 

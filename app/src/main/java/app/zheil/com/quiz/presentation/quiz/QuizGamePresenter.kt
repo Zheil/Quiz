@@ -98,4 +98,8 @@ class QuizGamePresenter: MvpPresenter<QuizGameView>() {
         }
 
     }
+
+    fun closeCurrentActivity() {
+        viewState.closeActivity()
+    }
 }
