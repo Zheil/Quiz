@@ -51,12 +51,11 @@ class MainActivity: BaseActivity(), MainView {
     }
 
     private fun initTypeFont() {
-        setFontViews(tvInfoQuiz, tvVersion)
+        setFontViews(tvInfoQuiz, tvVersion, tvTitleQuiz)
     }
 
     override fun showAboutApp() {
-        val builder = ChangelogBuilder()
-                .buildAndShowDialog(this, false)
+        ChangelogBuilder().buildAndShowDialog(this, false)
     }
 
     override fun showQuizActivity() {

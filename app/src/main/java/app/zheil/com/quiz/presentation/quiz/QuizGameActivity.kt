@@ -14,8 +14,6 @@ import com.daimajia.androidanimations.library.YoYo
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 import javax.inject.Inject
 
 
@@ -56,7 +54,6 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
 
     private fun initListeners() {
         btnNextQuestion.click {
-            //blockBtn()
             mPresenter.nextQuestion()
         }
 

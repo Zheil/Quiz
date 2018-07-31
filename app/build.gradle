@@ -62,5 +62,7 @@ dependencies {
     implementation 'com.chibatching.kotpref:initializer:2.5.0'
     //Changelog
     implementation 'com.github.MFlisar:changelog:1.0.4'
+    //Shadow
+    implementation 'com.sdsmdg.harjot:longshadows:1.0.1'
 
 }

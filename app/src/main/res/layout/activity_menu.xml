@@ -7,6 +7,29 @@
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
+
+    <com.sdsmdg.harjot.longshadows.LongShadowsWrapper xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        android:background="#0040476d"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.sdsmdg.harjot.longshadows.LongShadowsTextView
+            android:id="@+id/tvTitleQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:text="Quiz"
+            app:shadow_length="100"
+            app:shadow_blur_radius="35"
+            android:textColor="#FFFFFF"
+            android:textSize="30pt" />
+
+    </com.sdsmdg.harjot.longshadows.LongShadowsWrapper>
+
     <TextView
         android:id="@+id/tvInfoQuiz"
         android:layout_width="match_parent"
