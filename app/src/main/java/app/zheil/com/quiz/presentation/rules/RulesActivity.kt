@@ -1,6 +1,7 @@
 package app.zheil.com.quiz.presentation.rules
 
 import app.zheil.com.quiz.R
+import app.zheil.com.quiz.click
 import app.zheil.com.quiz.presentation.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_rules.*
 
@@ -13,7 +14,7 @@ class RulesActivity: BaseActivity() {
     }
 
     private fun initListeners() {
-        btnOk.setOnClickListener {
+        btnOk.click {
             finish()
         }
     }

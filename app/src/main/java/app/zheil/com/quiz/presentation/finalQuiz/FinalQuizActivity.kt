@@ -1,6 +1,7 @@
 package app.zheil.com.quiz.presentation.finalQuiz
 
 import app.zheil.com.quiz.R
+import app.zheil.com.quiz.click
 import app.zheil.com.quiz.events.FinishedQuizEvent
 import app.zheil.com.quiz.presentation.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_finish.*
@@ -19,7 +20,7 @@ class FinalQuizActivity: BaseActivity() {
     }
 
     private fun setListeners() {
-        btnFinish.setOnClickListener {
+        btnFinish.click {
             sendStickyEvent(FinishedQuizEvent())
             finish()
         }
