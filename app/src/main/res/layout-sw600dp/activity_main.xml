@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".presentation.quiz.QuizGameActivity">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/workPlace"
+        >
+
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 из 20 вопросов"
+            android:textColor="#fff"
+            android:textSize="9pt"
+            app:layout_constraintBottom_toTopOf="@+id/cardQuestionQuiz"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardQuestionQuiz"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_card_view"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.384">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTitleQuiz"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/quiz_view"
+                    android:gravity="center"
+                    android:text="@string/quiz_title"
+                    android:textColor="#ffff" />
+
+                <TextView
+                    android:id="@+id/tvQuestion"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="This is a first question"
+                    android:textSize="12pt" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/btnNextQuestion"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_gradient"
+            android:text="@string/btn_next_question"
+            android:textColor="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.909" />
+
+        <Button
+            android:id="@+id/btnPrevQuestion"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/button_gradient"
+            android:text="@string/back"
+            android:textColor="#fff"
+            android:textSize="10pt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnNextQuestion"
+            app:layout_constraintHorizontal_bias="0.522"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.908" />
+
+        <Button
+            android:id="@+id/btnShowRules"
+            android:layout_width="40dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_gradient"
+            android:text="@string/rules"
+            android:textColor="#fff"
+            android:textSize="10pt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toEndOf="@+id/btnNextQuestion"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.908" />
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:scaleType="center"
+            android:src="@drawable/ic_close_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Планшет"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>
