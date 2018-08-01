@@ -2,7 +2,6 @@ package app.zheil.com.quiz.presentation.quiz
 
 import app.zheil.com.quiz.Const
 import app.zheil.com.quiz.R
-import app.zheil.com.quiz.di.activity.DaggerActivityComponent
 import app.zheil.com.quiz.GlobalRouter
 import app.zheil.com.quiz.click
 import app.zheil.com.quiz.events.FinishedQuizEvent
@@ -14,7 +13,7 @@ import com.daimajia.androidanimations.library.YoYo
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-import javax.inject.Inject
+import org.koin.android.ext.android.inject
 
 
 class QuizGameActivity : BaseQuiz(), QuizGameView {
@@ -22,8 +21,10 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
     @InjectPresenter
     lateinit var mPresenter: QuizGamePresenter
 
-    @Inject
-    lateinit var mRouter: GlobalRouter
+    //@Inject
+    //lateinit var mRouter: GlobalRouter
+    private val mRouter: GlobalRouter by inject()
+
 
     override fun setLayoutView(): Int = R.layout.activity_main
 
@@ -42,7 +43,7 @@ class QuizGameActivity : BaseQuiz(), QuizGameView {
     }
 
     private fun init() {
-        DaggerActivityComponent.create().inject(this)
+        //DaggerActivityComponent.create().inject(this)
         mPresenter.initPresenterStart(this)
         initListeners()
         initFonts()

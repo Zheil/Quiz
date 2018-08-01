@@ -1,13 +1,11 @@
 package app.zheil.com.quiz.presentation.main
 
 import app.zheil.com.quiz.*
-import app.zheil.com.quiz.di.activity.DaggerActivityComponent
 import app.zheil.com.quiz.presentation.base.BaseActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import kotlinx.android.synthetic.main.activity_menu.*
-import javax.inject.Inject
 import com.michaelflisar.changelog.ChangelogBuilder
-
+import org.koin.android.ext.android.inject
 
 
 class MainActivity: BaseActivity(), MainView {
@@ -15,13 +13,14 @@ class MainActivity: BaseActivity(), MainView {
     @InjectPresenter
     lateinit var mPresenter: MainPresenter
 
-    @Inject
-    lateinit var mRouter: GlobalRouter
+    //@Inject
+    //lateinit var mRouter: GlobalRouter
+    private val mRouter: GlobalRouter by inject()
 
     override fun setLayoutView(): Int = R.layout.activity_menu
 
     override fun onChildCreate() {
-        DaggerActivityComponent.create().inject(this)
+       // DaggerActivityComponent.create().inject(this)
         mPresenter.initView()
     }
 

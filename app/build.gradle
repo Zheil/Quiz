@@ -24,6 +24,11 @@ android {
     }
 }
 
+ext {
+    koin_version = "0.9.3"
+}
+
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -49,10 +54,15 @@ dependencies {
     implementation 'com.jakewharton.rxbinding2:rxbinding-support-v4-kotlin:2.1.1'
     //Progress bar
     implementation 'com.bigkoo:svprogresshud:1.0.6'
+
     //Dagger2
-    implementation 'com.google.dagger:dagger:2.16'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
-    kapt 'com.google.dagger:dagger-compiler:2.16'
+   //implementation 'com.google.dagger:dagger:2.16'
+    //annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
+    //kapt 'com.google.dagger:dagger-compiler:2.16'
+
+    // di - Koin
+    implementation "org.koin:koin-core:$koin_version"
+    implementation "org.koin:koin-android:$koin_version"
     // EventBus
     implementation 'org.greenrobot:eventbus:3.1.1'
     //Status bar
@@ -64,5 +74,7 @@ dependencies {
     implementation 'com.github.MFlisar:changelog:1.0.4'
     //Shadow
     implementation 'com.sdsmdg.harjot:longshadows:1.0.1'
+
+
 
 }

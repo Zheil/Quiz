@@ -4,7 +4,6 @@ import android.content.Context
 import app.zheil.com.quiz.Const
 import app.zheil.com.quiz.MemoryApp
 import app.zheil.com.quiz.data.DataQuestion
-import app.zheil.com.quiz.di.presenter.DaggerPresenterComponent
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import io.reactivex.Observable
@@ -12,16 +11,19 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
-import javax.inject.Inject
+import org.koin.android.ext.android.inject
 
 @InjectViewState
 class QuizGamePresenter: MvpPresenter<QuizGameView>() {
 
-    @Inject
-    lateinit var mDataQuestion: DataQuestion
+    //@Inject
+    //lateinit var mDataQuestion: DataQuestion
+    //private val mDataQuestion: DataQuestion by inject()
+    private val mDataQuestion: DataQuestion = DataQuestion()
+
 
     fun initPresenterStart(context: Context) {
-        DaggerPresenterComponent.create().inject(this)
+        //DaggerPresenterComponent.create().inject(this)
         viewState.hideWorkPlace()
         readDataFromDataBase(context)
     }
